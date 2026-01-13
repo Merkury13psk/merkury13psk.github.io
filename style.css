@@ -1,0 +1,261 @@
+/* --- RESET I PODSTAWY --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- NAGŁÓWEK --- */
+header {
+    background-color: #fff;
+    border-bottom: 4px solid #003366;
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #003366;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #cc0000;
+}
+
+/* --- NAWIGACJA --- */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    font-size: 16px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #cc0000;
+}
+
+/* --- SOCIAL MEDIA ICONS --- */
+.social-icon {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.social-icon:hover {
+    color: #1877F2 !important;
+}
+
+/* --- ANIMACJE --- */
+@keyframes slideInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- HERO SECTION (LOGO OSOBNO, TEKST W PUDEŁKU) --- */
+.hero {
+    padding: 40px 0;
+    margin-bottom: 20px;
+    animation: slideInDown 0.6s ease-out forwards;
+}
+
+.hero-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    text-align: left;
+}
+
+/* Styl dla pudełka z tekstem */
+.hero-text {
+    background-color: #003366;
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.hero-text p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* --- STYL DLA LOGO --- */
+.hero-logo {
+    width: 220px; /* Tutaj zmieniasz rozmiar logo */
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* --- GŁÓWNA TREŚĆ --- */
+main {
+    flex: 1;
+    padding: 40px 0;
+    opacity: 0;
+    animation: slideInDown 0.8s ease-out 0.1s forwards;
+}
+
+section {
+    background: white;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+h1, h2 {
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #cc0000;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+/* --- AKTUALNOŚCI (UKŁAD PIONOWY - LISTA) --- */
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Jedna kolumna */
+    gap: 40px;                  /* Odstęp między postami */
+    max-width: 800px;           /* Ograniczenie szerokości dla czytelności */
+    margin: 0 auto;             /* Wyśrodkowanie listy */
+}
+
+.news-item {
+    background: #f9f9f9;
+    padding: 30px;
+    border-left: 5px solid #cc0000;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+}
+
+.news-date {
+    font-size: 14px;
+    color: #888;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Styl zdjęć w aktualnościach */
+.news-image {
+    width: 60%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- KONTAKT (WYŚRODKOWANY) --- */
+.contact-centered {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- STOPKA --- */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 20px;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    /* Hero na telefonie */
+    .hero-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-logo {
+        margin-bottom: 20px;
+    }
+
+    .hero-text {
+        width: 100%;
+        text-align: center;
+    }
+}
